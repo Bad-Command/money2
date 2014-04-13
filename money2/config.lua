@@ -19,3 +19,9 @@
 
 money.initial_amount = 2000
 money.currency_name = "cr"
+
+-- Old Path (where money file used to be stored. really messy and makes working with the world folder annoying when you have more than 100 player files)
+--money.logpath = minetest.get_worldpath() .. ""
+
+-- New Path (keeps all money files in one place)
+money.logpath = minetest.get_worldpath() .. "/money_logs"
