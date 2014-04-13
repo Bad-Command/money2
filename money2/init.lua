@@ -25,13 +25,13 @@ dofile(minetest.get_modpath("money2") .. "/config.lua")
 dofile(minetest.get_modpath("money2") .. "/lockedsign.lua")
 
 money.set = function(name, value)
-	local output = io.open(minetest.get_worldpath() .. "/money_" .. name .. ".txt", "w")
+	local output = io.open(money.logpath .. "/money_" .. name .. ".txt", "w")
 	output:write(value)
 	io.close(output)
 end
 
 money.get = function(name)
-	local input = io.open(minetest.get_worldpath() .. "/money_" .. name .. ".txt", "r")
+	local input = io.open(money.logpath .. "/money_" .. name .. ".txt", "r")
 	if not input then 
 		return nil
 	end
